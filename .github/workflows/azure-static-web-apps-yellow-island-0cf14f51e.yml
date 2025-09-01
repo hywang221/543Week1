@@ -20,6 +20,8 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_543_TOKEN }} # 你的 Azure token secret
           repo_token: ${{ secrets.GITHUB_TOKEN }}                          # 不用改
           action: "upload"
-          app_location: "/"        # index.html 所在目录
-          api_location: ""         # 没有 API 就留空
-          output_location: ""      # 没有 build 输出目录就留空
+          app_location: "/"        
+          api_location: ""        
+          output_location: ""     
+
+          
