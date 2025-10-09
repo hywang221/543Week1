@@ -72,6 +72,29 @@ main {
   width: 168px;
 }
 
+.button-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.button-wrapper button {
+  /* margin-right: 30px; */
+}
+button {
+  display: block;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 15px;
+  border: 1px #DDD solid;
+  border-radius: 4px;
+  background: #FFF;
+  cursor: pointer;
+}
+button:hover {
+  border: 1px #1677ff solid;
+  color: #1677ff;
+}
+
 #calcList {
   margin-top: 10px;
 }

@@ -8,7 +8,7 @@
 </head>
 <body>
   <main>
-    <div class="calc_top">
+    <section class="calc_top">
         <div class="calc_top_content">
             <p class="calc_top_title">Input:</p>
             <p id="userIn"><span class="text-gray">Sample Caculator</span></p>
@@ -17,8 +17,8 @@
             <p class="calc_top_title">Output:</p>
             <p id="mathResult"><span class="text-gray">Let's Go!</span></p>
         </div>
-    </div>
-    <div class="calc_bottom">
+    </section>
+    <section class="calc_bottom">
         <div class="calc_bottom_row">
             <p class="calc_bottom_col calc_bottom_col_2" id="clear">C</p>
             <p class="calc_bottom_col" id="back">Del</p>
@@ -48,59 +48,21 @@
             <p class="calc_bottom_col" id="dot">.</p>
             <p class="calc_bottom_col" id="result">=</p>
         </div>
-    </div>
+    </section>
 
-    <div>
+    <footer>
+        <div class="button-wrapper">
+            <button id="selectAll">All True</button>
+            <button id="unSelectAll">All False</button>
+            <button id="clearList">Clear</button>
+
+        </div>
         <div id="calcList">
             <!-- <div>8+5=13 <span class="checkMark"></span></div>
             <span class="checkMark"></span> -->
         </div>
-    </div>
+    </footer>
 
-    <!-- <table class="window">
-        <tr>
-            <td class="window_prompt">Input :</td>
-            <td><div id="userIn"><div class="text">Sample Caculator</div></div></td>
-        </tr>
-        <tr>
-            <td class="window_prompt">Output :</td>
-            <td><div id="mathResult"><div class="text">Let's Go!</div></div></td>
-        </tr>
-    </table>
-
-    <table id="main">
-        <tr>
-            <td colspan="2" id="clear">C</td>
-            <td id="back">Del</td>
-            <td id="operator4">/</td>
-        </tr>
-        <tr>
-            <td id="num7" class="num">7</td>
-            <td id="num8" class="num">8</td>
-            <td id="num9" class="num">9</td>
-            <td id="operator3">x</td>
-        </tr>
-        <tr>
-            <td id="num4" class="num">4</td>
-            <td id="num5" class="num">5</td>
-            <td id="num6" class="num">6</td>
-            <td id="operator2">-</td>
-        </tr>
-        <tr>
-            <td id="num1" class="num">1</td>
-            <td id="num2" class="num">2</td>
-            <td id="num3" class="num">3</td>
-            <td id="operator1">+</td>
-        </tr>
-        <tr>
-            <td id="minus">±</td>
-            <td id="num0" class="num">0</td>
-            <td id="dot">.</td>
-            <td id="result">＝</td>
-        </tr>
-    </table> -->
-
-    
 </main>
 <script src="./index.js"></script>
 </body>

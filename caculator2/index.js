@@ -134,3 +134,22 @@ document.getElementById("result").onclick = function () {
   resultList.push(item);
   showCalcList();
 };
+
+try {
+    document.getElementById('selectAll').onclick = () => {
+        if (!resultList || resultList.length === 0) return;
+        selectList = resultList.map(item => +item.id);
+        showCalcList();
+    }
+    document.getElementById('unSelectAll').onclick = () => {
+        selectList = [];
+        showCalcList();
+    }
+    document.getElementById('clearList').onclick = () => {
+        selectList = [];
+        resultList = [];
+        showCalcList();
+    }
+} catch (error) {
+    
+}
