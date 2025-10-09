@@ -76,9 +76,53 @@ main {
   margin-top: 10px;
 }
 #calcList div {
-  height: 30px;
+  height: 50px;
   font-size: 30px;
-  line-height: 30px;
+  line-height: 50px;
+  width: 338px;
+  position: relative;
 }
 
+.checkMark {
+  display: inline-block;
+  margin-left: 20px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #D4D7D7;
+  position: absolute;
+  right: 0;
+  top: 17px;
+  cursor: pointer;
+  transform: scale(1.8);
+  /* &:hover {
+    background-color: #00C8C8;
+  } */
+  &.disabledBtn {
+    background-color: #E4E4E4;
+  }
+}
+.checkMark::before {
+  content: '';
+  width: 6px;
+  height: 1px;
+  background-color: #FFF;
+  position: absolute;
+  top: 10px;
+  left: 2px;
+  transform: rotate(45deg);
+}
+.checkMark::after {
+  content: '';
+  width: 11px;
+  height: 1px;
+  background-color: #FFF;
+  position: absolute;
+  top: 8px;
+  left: 5px;
+  transform: rotate(-45deg);
+}
+.checkMark.active {
+  background-color: #00C8C8;
+}
 
