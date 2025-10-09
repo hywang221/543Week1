@@ -7,8 +7,56 @@
   <link rel="stylesheet" href="./index.css" type="text/css"  />
 </head>
 <body>
-  <div>
-    <table class="window">
+  <main>
+    <div class="calc_top">
+        <div class="calc_top_content">
+            <p class="calc_top_title">Input:</p>
+            <p id="userIn"><span class="text-gray">Sample Caculator</span></p>
+        </div>
+        <div class="calc_top_content">
+            <p class="calc_top_title">Output:</p>
+            <p id="mathResult"><span class="text-gray">Let's Go!</span></p>
+        </div>
+    </div>
+    <div class="calc_bottom">
+        <div class="calc_bottom_row">
+            <p class="calc_bottom_col calc_bottom_col_2" id="clear">C</p>
+            <p class="calc_bottom_col" id="back">Del</p>
+            <p class="calc_bottom_col" id="operator4">/</p>
+        </div>
+        <div class="calc_bottom_row">
+            <p class="calc_bottom_col" id="num7">7</p>
+            <p class="calc_bottom_col" id="num8">8</p>
+            <p class="calc_bottom_col" id="num9">9</p>
+            <p class="calc_bottom_col" id="operator3">x</p>
+        </div>
+        <div class="calc_bottom_row">
+            <p class="calc_bottom_col" id="num4">4</p>
+            <p class="calc_bottom_col" id="num5">5</p>
+            <p class="calc_bottom_col" id="num6">6</p>
+            <p class="calc_bottom_col" id="operator2">-</p>
+        </div>
+        <div class="calc_bottom_row">
+            <p class="calc_bottom_col" id="num1">1</p>
+            <p class="calc_bottom_col" id="num2">2</p>
+            <p class="calc_bottom_col" id="num3">3</p>
+            <p class="calc_bottom_col" id="operator1">+</p>
+        </div>
+        <div class="calc_bottom_row">
+            <p class="calc_bottom_col" id="minus">±</p>
+            <p class="calc_bottom_col" id="num0">0</p>
+            <p class="calc_bottom_col" id="dot">.</p>
+            <p class="calc_bottom_col" id="result">=</p>
+        </div>
+    </div>
+
+    <div>
+        <div id="calcList">
+            <div></div>
+        </div>
+    </div>
+
+    <!-- <table class="window">
         <tr>
             <td class="window_prompt">Input :</td>
             <td><div id="userIn"><div class="text">Sample Caculator</div></div></td>
@@ -49,10 +97,10 @@
             <td id="dot">.</td>
             <td id="result">＝</td>
         </tr>
-    </table>
+    </table> -->
 
     
-</div>
+</main>
 <script src="./index.js"></script>
 </body>
 </html>
