@@ -7,6 +7,11 @@ main {
   margin: 40px auto;
   width: 338px;
 }
+.header-title {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
 .calc_top {
   width: 338px;  
   border: 1px #000 solid;
