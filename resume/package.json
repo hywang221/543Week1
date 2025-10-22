@@ -11,6 +11,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.27.1",
+    "@babel/preset-react": "^7.27.1",
+    "@vitejs/plugin-react": "^5.0.4",
     "antd": "^5.27.6",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
