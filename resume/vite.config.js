@@ -22,5 +22,9 @@ export default defineConfig({
       }
     }
   },
-  base: '/resume/dist'  // 设置 base 路径
+  // base: '/resume/dist',
+  base: process.env.NODE_ENV === 'production' ? '/resume/dist' : '/',
+  // build: {
+  //   outDir: '/resume/dist'
+  // }
 });

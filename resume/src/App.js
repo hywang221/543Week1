@@ -23,7 +23,9 @@ function App() {
         </header>
         <section className="content">
           <section className="content-left">
-
+            <div>
+              <img src="" className="avatar" />
+            </div>
           </section>
           <section className="content-right">
 
