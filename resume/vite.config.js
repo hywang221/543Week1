@@ -22,5 +22,5 @@ export default defineConfig({
       }
     }
   },
-  // base: '/resume/dist'  // 设置 base 路径
+  base: '/resume/dist'  // 设置 base 路径
 });
