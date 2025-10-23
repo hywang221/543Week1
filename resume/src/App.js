@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+import React from "react";
 import "./App.less";
 
 import { Button } from "antd";
@@ -79,7 +77,7 @@ function App() {
               <a className="detail-more">More +</a>
             </div>
             <div className="detail-item">
-              <div className="detail-title">Company Introduction</div>
+              <div className="detail-title">Project Experience</div>
               <div className="detail-item-content">
                 <span style={{fontWeight: "bold"}}>Form and Table Visualization</span>
                 {/* <br /> */}
@@ -107,7 +105,9 @@ function App() {
                 <span>Email: hwang221@hawk.illinoistech.com</span>
               </div>
             </div>
-            <div className="footer-right"></div>
+            <div className="footer-right">
+              <img className="footer-code" src="../img/w_code.jpg" />
+            </div>
           </div>
         </footer>
       </main>
