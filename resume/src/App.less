@@ -19,6 +19,7 @@ body {
   max-width: 960px;
   margin: 0 auto;
   padding-bottom: 180px;
+  position: relative;
 }
 
 .header {
@@ -54,18 +55,30 @@ body {
     position: relative;
     float: left;
     margin-right: 48px;
+    // border: 1px #eee solid;
+      border-radius: 6px;
+      overflow: hidden;
     .avatar {
       width: 240px;
       height: 380px;
-      border: 1px #eee solid;
-      border-radius: 4px;
+      background: url(../img/avatar.jpg) no-repeat;
+      background-size: 100% auto;
     }
     .avatar-info {
       position: absolute;
-      bottom: 80px;
+      bottom: 0;
+      height: 142px;
       text-align: center;
       width: 100%;
-      font-weight: bold;
+      background: rgba(0, 0, 0, 0.6);
+      padding-top: 15px;
+      div {
+        margin-top: 10px;
+        &:nth-of-type(1) {
+          font-size: 22px;
+          font-weight: bold;
+        }
+      }
     }
   }
   .content-right {
@@ -93,6 +106,13 @@ body {
           border-radius: 1px;
         }
       }
+      .detail-item-content {
+        span {
+          margin-bottom: 8px;
+          display: block;
+      }
+      }
+      
       .detail-more {
         position: absolute;
         right: 30px;

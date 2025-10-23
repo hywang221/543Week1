@@ -23,42 +23,56 @@ function App() {
         </header>
         <section className="content">
           <section className="content-left">
-            <div>
+            <div className="avatar-wrapper">
               <img src="" className="avatar" />
             </div>
             <div className="avatar-info">
               <div>Hongyang Wang</div>
+              <div>Front-End Engineer </div>
+              <div>+1-312-434-1065</div>
             </div>
           </section>
           <section className="content-right">
             <div className="detail-item">
               <div className="detail-title">Skill Introduction</div>
               <div className="detail-item-content">
-                Proficient in Modern front-end frameworks, including React,
+                <span>Proficient in Modern front-end frameworks, including React,
                 VueJs, AngularJs.
-                <br />
+                </span>
+                {/* <br /> */}
+                <span>
                 Proficient in front-end build automation tools, including
                 Webpack and Vite.
-                <br />
+                </span>
+                {/* <br /> */}
+                <span>
                 Proficient in Node.js, Express, and MongoDB.
-                <br />
+                </span>
+                {/* <br /> */}
+                <span>
                 Proficient in CSS preprocessor technologies: SASS and LESS...
+                </span>
               </div>
               <a className="detail-more">More +</a>
             </div>
             <div className="detail-item">
               <div className="detail-title">Company Introduction</div>
               <div className="detail-item-content">
-                <span>JD.com</span>
+                <span style={{fontWeight: "bold"}}>JD.com</span>
+                {/* <br /> */}
                 <span>
                   Led 4 front-end developers in completing the design,
                   development, and deployment of various technical projects,
                   such as form and table visualization and micro-frontend
                   routing refactoring.
-                  <br />
+                  </span>
+                  {/* <br /> */}
+                  <span>
                   Responsible for maintaining and managing the company’s core
                   component library, @dada/form.
-                  <br />
+                  </span>
+                  {/* <br /> */}
+                  <span>
                   Conducted the first round of interviews...
                 </span>
               </div>
@@ -67,10 +81,10 @@ function App() {
             <div className="detail-item">
               <div className="detail-title">Company Introduction</div>
               <div className="detail-item-content">
-                <span>Form and Table Visualization</span>
-                <br />
+                <span style={{fontWeight: "bold"}}>Form and Table Visualization</span>
+                {/* <br /> */}
                 <span>12/2020 - 12/2023</span>
-                <br />
+                {/* <br /><br /> */}
                 <span>
                   Management System primarily consists of numerous lists and
                   forms. To address this, my company provides a visual
@@ -87,16 +101,14 @@ function App() {
         <footer className="footer">
           <div className="footer-content">
             <div className="footer-left">
-            <div className="footer-left-title">Contact Info</div>
-            <div className="footer-left-item">
-              <span>Phone: +1-312-434-1065</span>
-              <span>Email: hwang221@hawk.illinoistech.com</span>
-
+              <div className="footer-left-title">Contact Info</div>
+              <div className="footer-left-item">
+                <span>Phone: +1-312-434-1065</span>
+                <span>Email: hwang221@hawk.illinoistech.com</span>
+              </div>
             </div>
+            <div className="footer-right"></div>
           </div>
-          <div className="footer-right"></div>
-          </div>
-          
         </footer>
       </main>
       {/* <div>
