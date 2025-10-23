@@ -6,11 +6,6 @@
       "statusCode": 200
     },
     {
-      "route": "/caculator2/*",
-      "serve": "/caculator2/index.html",
-      "statusCode": 200
-    },
-    {
       "route": "/",
       "serve": "/index.html",
       "statusCode": 200
