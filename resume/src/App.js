@@ -102,7 +102,7 @@ function App() {
               <div className="footer-left-title">Contact Info</div>
               <div className="footer-left-item">
                 <span>Phone: +1-312-434-1065</span>
-                <span>Email: hwang221@hawk.illinoistech.com</span>
+                <span>Email: hwang221@hawk.illinoistech.edu</span>
               </div>
             </div>
             <div className="footer-right">
