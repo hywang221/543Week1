@@ -1,0 +1,1 @@
+import{_ as a,c as t,b as o,o as s}from"./index-CpNanx7R.js";const n={};function r(c,e){return s(),t("div",null,[...e[0]||(e[0]=[o("h1",null,"Game Details",-1)])])}const l=a(n,[["render",r],["__scopeId","data-v-121d3ddb"]]);export{l as default};
