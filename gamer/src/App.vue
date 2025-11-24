@@ -7,6 +7,10 @@ import HelloWorld from './components/HelloWorld.vue'
     <main>
       <router-view></router-view>
     </main>
+    <nav>
+        <router-link to="/">Home</router-link>
+        <router-link to="/detail">Detail</router-link>
+      </nav>
     <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
