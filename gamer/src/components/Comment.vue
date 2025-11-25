@@ -11,7 +11,7 @@ const randomInt = Math.floor(Math.random() * 8) + 1;
 <template>
   <div class="comment-item">
     <div class="player-wrapper">
-      <img :src="`/images/game${randomInt}.png`" class="player-avatar" />
+      <img :src="`/game${randomInt}.png`" class="player-avatar" />
       <div class="player-name">{{commentInfo?.player || "ShadowBlaze"}}</div>
     </div>
     <div class="comment-content">

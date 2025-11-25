@@ -16,7 +16,7 @@ const onGoDetail = (item) => {
         <template #default="scope">
           <div style="display: flex; align-items: center">
             <img
-              :src="`/images/${scope.row.img}`"
+              :src="`/${scope.row.img}`"
               class="game-img"
               alt="game img"
             />

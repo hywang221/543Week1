@@ -18,7 +18,7 @@ const commentsList = shuffleArray(comments);
     </el-button>
     <h1>{{ gameInfo.name }}</h1>
     <div class="game-detail">
-      <img :src="`/images/${gameInfo.img}`" class="game-img" />
+      <img :src="`/${gameInfo.img}`" class="game-img" />
       <div class="game-content">
         <div class="info-item">
           <span class="info-label">Game Name: </span> {{ gameInfo.name }}
