@@ -11,7 +11,7 @@ import Sidebar from './components/Sidebar.vue'
       <router-view></router-view>
     </main>
     <nav>
-        <router-link to="/">Home</router-link>
+        <router-link to="/list">Home</router-link>
         <router-link to="/detail">Detail</router-link>
       </nav>
       <el-button>test button</el-button>

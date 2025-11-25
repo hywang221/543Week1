@@ -34,7 +34,7 @@ const handleClose = (key, keyPath) => {
       >
         <el-menu-item index="2">
           <el-icon><icon-menu /></el-icon>
-          <span><router-link to="/">Home</router-link></span>
+          <span><router-link to="/list">Home</router-link></span>
         </el-menu-item>
         <el-menu-item index="3" disabled>
           <el-icon><document /></el-icon>
@@ -62,5 +62,10 @@ const handleClose = (key, keyPath) => {
 }
 ::v-deep .el-menu {
   height: 100vh;
+  color: #FFF;
+  
 }
+::v-deep .el-menu a {
+    color: #FFF;
+  }
 </style>
