@@ -8,6 +8,7 @@ const router = useRouter();
 const route = useRoute();
 
 const gameInfo = route.query || {};
+gameInfo.imgUrl = new URL(`../images/${gameInfo.img}`, import.meta.url).href;
 const commentsList = shuffleArray(comments);
 </script>
 
@@ -18,7 +19,7 @@ const commentsList = shuffleArray(comments);
     </el-button>
     <h1>{{ gameInfo.name }}</h1>
     <div class="game-detail">
-      <img :src="`/${gameInfo.img}`" class="game-img" />
+      <img :src="gameInfo.imgUrl" class="game-img" />
       <div class="game-content">
         <div class="info-item">
           <span class="info-label">Game Name: </span> {{ gameInfo.name }}

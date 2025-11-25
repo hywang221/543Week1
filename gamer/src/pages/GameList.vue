@@ -22,11 +22,6 @@ const gameListData = gameInfo.map(item => {
         <template #default="scope">
           <div style="display: flex; align-items: center">
             <img
-              :src="scope.row.img"
-              class="game-img"
-              alt="game img"
-            />
-            <img
               :src="scope.row.imgUrl"
               class="game-img"
               alt="game img"
