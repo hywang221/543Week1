@@ -28,19 +28,19 @@ const commentsList = shuffleArray(comments);
         </div>
         <div class="info-item">
           <span class="info-label">Main Story Duration: </span>
-          {{ gameInfo.duration }} hrs
+          {{ gameInfo.mainHrs }} hrs
         </div>
         <div class="info-item">
           <span class="info-label">Story + SIDES Duration: </span>
-          {{ gameInfo.duration }} hrs
+          {{ gameInfo.sidesHrs }} hrs
         </div>
         <div class="info-item">
           <span class="info-label">Everything Duration: </span>
-          {{ gameInfo.duration }} hrs
+          {{ gameInfo.eveHrs }} hrs
         </div>
         <div class="info-item">
           <span class="info-label">All Styles Duration: </span>
-          {{ gameInfo.duration }} hrs
+          {{ gameInfo.allHrs }} hrs
         </div>
         <div class="info-item">
           <span class="info-label">Rate: </span>
@@ -82,6 +82,9 @@ const commentsList = shuffleArray(comments);
 }
 .info-label {
   font-weight: bold;
+  margin-right: 10px;
+  width: 220px;
+  display: inline-block;
 }
 .return-btn {
   position: fixed;

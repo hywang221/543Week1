@@ -1,12 +1,18 @@
 <script setup>
 import { useRouter } from "vue-router";
-import gameListData from "@/utils/gameInfo";
+import gameInfo from "@/utils/gameInfo";
 const router = useRouter();
 
 const onGoDetail = (item) => {
   console.log("item", item);
   router.push({ path: "/detail", query: item });
 };
+const gameListData = gameInfo.map(item => {
+  return {
+    ...item,
+    imgUrl: new URL(`../images/${item.img}`, import.meta.url).href
+  }
+})
 </script>
 
 <template>
@@ -16,7 +22,12 @@ const onGoDetail = (item) => {
         <template #default="scope">
           <div style="display: flex; align-items: center">
             <img
-              :src="`/${scope.row.img}`"
+              :src="scope.row.img"
+              class="game-img"
+              alt="game img"
+            />
+            <img
+              :src="scope.row.imgUrl"
               class="game-img"
               alt="game img"
             />
