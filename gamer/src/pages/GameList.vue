@@ -16,7 +16,7 @@
     date: '2016-05-04',
     name: 'Tom',
     address: 'No. 189, Grove St, Los Angeles',
-    img: "../assets/vue.svg"
+    img: "/images/game1.png"
   },
   {
     date: '2016-05-01',
@@ -35,11 +35,15 @@
           <div style="display: flex; align-items: center">
             
             <img :src="scope.row.img" class="game-img" alt="game img" />
+            <img src="../images/game1.png" class="game-img images" alt="img" />
           </div>
         </template>
       </el-table-column>
       <el-table-column prop="name" label="Name" width="180" />
-      <el-table-column prop="address" label="Address" />
+      <el-table-column prop="address" label="Address" >
+        <img src="/game1.png" class="game-img images" alt="img" />
+        <img src="/images/game1.png" class="game-img images" alt="img" />
+      </el-table-column>
     </el-table>
   </div>
 </template>
