@@ -1,4 +1,7 @@
 import React from "react";
+import { Routes, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import Company from "./pages/Company"
 import "./App.less";
 
 import { Button } from "antd";
@@ -8,13 +11,19 @@ function App() {
 
   return (
     <>
+      <Routes>
+        {/* <Route path="/" element={<Home />} /> */}
+        <Route path="/company" element={<Company />} />
+      </Routes>
       <main className="container">
         <header className="header">
           <div className="logo">Logo</div>
           <div className="header-right">
             <div className="header-right-item active">Home</div>
             <div className="header-right-item">Skill</div>
-            <div className="header-right-item">Company</div>
+            <div className="header-right-item">
+              <Link to="/company">Company</Link>
+            </div>
             <div className="header-right-item">Work</div>
             <div className="header-right-item">Contact</div>
           </div>
