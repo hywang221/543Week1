@@ -2,6 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router';
 const routes = [
   {
     path: '/',
+    redirect: '/list'
+  },
+  {
+    path: '/',
     name: 'Home',
     component: () => import('@/pages/GameList.vue'), 
   },
@@ -19,6 +23,10 @@ const routes = [
     path: '/checkList',
     name: 'CheckList',
     component: () => import('@/pages/CheckList.vue'), 
+  },
+  {
+    path: '/:pathMatch(.*)*',
+    redirect: '/list'
   },
 ];
 const router = createRouter({
