@@ -1,5 +1,6 @@
 <script setup>
 import { useRoute, useRouter } from "vue-router";
+import gameList from "@/utils/gameInfo";
 import Comment from "../components/Comment.vue";
 import comments from "../utils/comments";
 import { shuffleArray } from "../utils";
@@ -7,17 +8,31 @@ import { shuffleArray } from "../utils";
 const router = useRouter();
 const route = useRoute();
 
-const gameInfo = route.query || {};
+let gameInfo = route.query || {};
 gameInfo.imgUrl = new URL(`../images/${gameInfo.img}`, import.meta.url).href;
 const commentsList = shuffleArray(comments);
+try {
+  if (!gameInfo.id) {
+    console.log('no game info')
+    let formatData = gameList.map(item => {
+      return {
+        ...item,
+        imgUrl: new URL(`../images/${item.img}`, import.meta.url).href
+      }
+    });
+    gameInfo = formatData[0];
+  }
+} catch (error) {
+  console.log('error', error);
+}
 </script>
 
 <template>
   <div>
     <el-button class="return-btn" type="primary">
-      <router-link to="/list">Return</router-link>
+      <router-link to="/list">Return Home</router-link>
     </el-button>
-    <h1>{{ gameInfo.name }}</h1>
+    <h1 class="detail-title">{{ gameInfo.name }}</h1>
     <div class="game-detail">
       <img :src="gameInfo.imgUrl" class="game-img" />
       <div class="game-content">
@@ -70,6 +85,10 @@ const commentsList = shuffleArray(comments);
 .game-detail {
   display: flex;
   font-size: 18px;
+}
+.detail-title {
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
 .game-img {
   width: 300px;

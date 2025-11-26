@@ -15,6 +15,11 @@ const routes = [
     name: 'Detail',
     component: () => import('@/pages/GameDetail.vue'), 
   },
+  {
+    path: '/checkList',
+    name: 'CheckList',
+    component: () => import('@/pages/CheckList.vue'), 
+  },
 ];
 const router = createRouter({
   history: createWebHistory(),

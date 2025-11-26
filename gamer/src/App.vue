@@ -1,7 +1,9 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import Sidebar from './components/Sidebar.vue'
+import HelloWorld from "./components/HelloWorld.vue";
+import Sidebar from "./components/Sidebar.vue";
+import { checkFirstLogin } from "@/utils";
 
+checkFirstLogin();
 </script>
 
 <template>
@@ -10,20 +12,15 @@ import Sidebar from './components/Sidebar.vue'
     <main>
       <router-view></router-view>
     </main>
-    <nav>
-        <router-link to="/list">Home</router-link>
-        <router-link to="/detail">Detail</router-link>
-      </nav>
-      <el-button>test button</el-button>
-    <a href="https://vite.dev" target="_blank">
+    
+    <!-- <a href="https://vite.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
     <a href="https://vuejs.org/" target="_blank">
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-    <HelloWorld msg="Vite + Vue" />
+    </a> -->
+    
   </div>
-  
 </template>
 
 <style scoped>
