@@ -65,3 +65,23 @@ npm run build
 └── README.md
 ```
 
+## System Screenshots
+#### Homepage (Game List Page)    
+<img width="1451" height="1030" alt="image" src="https://github.com/user-attachments/assets/2546ded8-97d7-4433-a453-873359e18732" />
+
+#### Game Detail Page    
+<img width="1456" height="1031" alt="image" src="https://github.com/user-attachments/assets/96d7b27d-2c7a-4278-a90e-5e24f70e82d3" />
+
+#### Game Collection Page    
+<img width="1437" height="1023" alt="image" src="https://github.com/user-attachments/assets/db1e7628-1def-4906-b91f-0d58e04ee946" />
+
+#### Random Game Page    
+<img width="1516" height="1028" alt="image" src="https://github.com/user-attachments/assets/3841a627-d307-4828-853c-7dde80a68292" />
+
+
+
+
+
+
+
+
