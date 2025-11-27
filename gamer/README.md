@@ -21,8 +21,10 @@ Please use npm version 22 or above.
 ```
 # Install project dependencies
 npm install
+
 # Start the project
 npm run dev
+
 # Build the project
 npm run build
 ```
