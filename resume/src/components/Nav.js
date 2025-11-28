@@ -1,30 +1,57 @@
-import React from "react";
-import { Routes, Route } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import { useSelector } from "react-redux";
 
 import { Button } from "antd";
-import styles from './nav.module.less';
-
-
+import styles from "./nav.module.less";
 
 function Nav() {
-  // const [count, setCount] = useState(0)
+  const [navIndex, setNavIndex] = useState(1);
+
+  const onSelectNav = (index) => {
+    setNavIndex(index);
+  };
 
   return (
     <>
       <header className={styles.header}>
         <div className={styles.logo}>Logo</div>
         <div className={styles.headerRight}>
-          <div className={`${styles.headerRightItem} active`}>
+          <div
+            className={`${styles.headerRightItem} ${
+              navIndex === 1 ? styles.active : ""
+            }`}
+            onClick={onSelectNav.bind(this, 1)}
+          >
             <Link to="/">Home</Link>
           </div>
-          <div className={styles.headerRightItem}>Skill</div>
-          <div className={styles.headerRightItem}>
+          <div className={`${styles.headerRightItem} ${
+              navIndex === 2 ? styles.active : ""
+            }`}
+            onClick={onSelectNav.bind(this, 2)}>
+            <Link to="/company">Skill</Link>
+          </div>
+          <div className={`${styles.headerRightItem} ${
+              navIndex === 3 ? styles.active : ""
+            }`}
+            onClick={onSelectNav.bind(this, 3)}>
             <Link to="/company">Company</Link>
           </div>
-          <div className={styles.headerRightItem}>Work</div>
-          <div className={styles.headerRightItem}>Contact</div>
+          <div className={`${styles.headerRightItem} ${
+              navIndex === 4 ? styles.active : ""
+            }`}
+            onClick={onSelectNav.bind(this, 4)}>
+            <Link to="/company">Work</Link>
+          </div>
+          <div className={`${styles.headerRightItem} ${
+              navIndex === 5 ? styles.active : ""
+            }`}
+            onClick={onSelectNav.bind(this, 5)}>
+            <Link to="/company">Contact</Link>
+          </div>
+          <div className={styles.animation}></div>
+          <div className={styles.animationShadow}></div>
         </div>
       </header>
     </>

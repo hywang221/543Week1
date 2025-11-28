@@ -15,7 +15,7 @@ function Home() {
       <section className={styles.content}>
         <section className={styles.contentLeft}>
           <div className={styles.avatarWrapper}>
-            <img src="" className={styles.avatar} />
+            <img src={new URL(`../images/${"avatar.jpg"}`, import.meta.url).href} className={styles.avatar} />
           </div>
           <div className={styles.avatarInfo}>
             <div>Hongyang Wang</div>
@@ -97,7 +97,7 @@ function Home() {
             </div>
           </div>
           <div className={styles.footerRight}>
-            <img className={styles.footerCode} src="../img/w_code.jpg" />
+            <img className={styles.footerCode} src={new URL(`../images/${"w_code.jpg"}`, import.meta.url).href} />
           </div>
         </div>
       </footer>
