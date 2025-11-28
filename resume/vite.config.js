@@ -23,7 +23,7 @@ export default defineConfig({
     }
   },
   // base: '/resume/dist',
-  base: process.env.NODE_ENV === 'production' ? '/resume/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/resume/dist' : '/',
   // build: {
   //   outDir: '/resume/dist'
   // }
