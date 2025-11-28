@@ -1,0 +1,26 @@
+.header {
+  height: 80px;
+  border-bottom: 1px #999 solid;
+
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  .logo {
+    height: 80px;
+    line-height: 80px;
+  }
+  .headerRight {
+    // width: 200px;
+    display: flex;
+    .headerRightItem {
+      padding: 0 20px;
+      height: 80px;
+      line-height: 80px;
+      cursor: pointer;
+      &.active {
+        border-bottom: 1px #4096ff solid;
+        color: #4096ff;
+      }
+    }
+  }
+}
