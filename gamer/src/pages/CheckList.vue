@@ -61,6 +61,11 @@ const onCheck = debounce((item) => {
     <el-button class="return-btn" type="primary">
       <router-link to="/list">Return</router-link>
     </el-button>
+    <div v-if="!gameListData || gameListData.length === 0">
+      <h2>No Data</h2>
+      <div>Please collect the game on the homepage.</div>
+    </div>
+    
 
     <div class="collection-list">
       <div
