@@ -16,7 +16,9 @@ function Nav() {
       <header className={styles.header}>
         <div className={styles.logo}>Logo</div>
         <div className={styles.headerRight}>
-          <div className={`${styles.headerRightItem} active`}>Home</div>
+          <div className={`${styles.headerRightItem} active`}>
+            <Link to="/">Home</Link>
+          </div>
           <div className={styles.headerRightItem}>Skill</div>
           <div className={styles.headerRightItem}>
             <Link to="/company">Company</Link>

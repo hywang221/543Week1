@@ -1,0 +1,14 @@
+{
+  "routes": [
+    {
+      "route": "/resume/*",
+      "serve": "/resume/dist/index.html",
+      "statusCode": 200
+    },
+    {
+      "route": "/index.html",
+      "serve": "/resume/dist/index.html",
+      "statusCode": 200
+    }
+  ]
+}
