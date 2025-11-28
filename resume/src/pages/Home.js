@@ -1,13 +1,14 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-// import { useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 import { Button } from "antd";
 import styles from  "./home.module.less";
 
 function Home() {
   // const [count, setCount] = useState(0)
-  // const count = useSelector((state) => state.counter.value);
+  const homeData = useSelector((state) => state.homeData);
+  console.log('homeData', homeData)
 
   return (
     <>
@@ -15,72 +16,54 @@ function Home() {
       <section className={styles.content}>
         <section className={styles.contentLeft}>
           <div className={styles.avatarWrapper}>
-            <img src={new URL(`../images/${"avatar.jpg"}`, import.meta.url).href} className={styles.avatar} />
+            <img src={new URL(`../images/${homeData.avatarUrl}`, import.meta.url).href} className={styles.avatar} />
           </div>
           <div className={styles.avatarInfo}>
-            <div>Hongyang Wang</div>
-            <div>Front-End Engineer </div>
-            <div>+1-312-434-1065</div>
+            <div>{homeData.name}</div>
+            <div>{homeData.position}</div>
+            <div>{homeData.phone}</div>
           </div>
         </section>
         <section className={styles.contentRight}>
           <div className={styles.detailItem}>
             <div className={styles.detailTitle}>Skill Introduction</div>
             <div className={styles.detailItemContent}>
-              <span>
-                Proficient in Modern front-end frameworks, including React,
-                VueJs, AngularJs.
-              </span>
-              {/* <br /> */}
-              <span>
-                Proficient in front-end build automation tools, including
-                Webpack and Vite.
-              </span>
-              {/* <br /> */}
-              <span>Proficient in Node.js, Express, and MongoDB.</span>
-              {/* <br /> */}
-              <span>
-                Proficient in CSS preprocessor technologies: SASS and LESS...
-              </span>
+              {
+                homeData?.skillDetailList?.map((item, index) => (
+                  <span key={index}>{item}</span>
+                ))
+              }
+              
             </div>
             <a className={styles.detailMore}>More +</a>
           </div>
           <div className={styles.detailItem}>
             <div className={styles.detailTitle}>Company Introduction</div>
             <div className={styles.detailItemContent}>
-              <span style={{ fontWeight: "bold" }}>JD.com</span>
-              {/* <br /> */}
-              <span>
-                Led 4 front-end developers in completing the design,
-                development, and deployment of various technical projects, such
-                as form and table visualization and micro-frontend routing
-                refactoring.
-              </span>
-              {/* <br /> */}
-              <span>
-                Responsible for maintaining and managing the company’s core
-                component library, @dada/form.
-              </span>
-              {/* <br /> */}
-              <span>Conducted the first round of interviews...</span>
+              <span className={styles.detailItemTitle}>{homeData?.companyName}</span>
+              {
+                homeData?.companyDetailList?.map((item, index) => (
+                  <span key={index}>{item}</span>
+                ))
+              }
             </div>
             <a className={styles.detailMore}>More +</a>
           </div>
           <div className={styles.detailItem}>
             <div className={styles.detailTitle}>Project Experience</div>
             <div className={styles.detailItemContent}>
-              <span style={{ fontWeight: "bold" }}>
-                Form and Table Visualization
+              <span className={styles.detailItemTitle}>
+                {homeData?.projectTitle}
               </span>
               {/* <br /> */}
-              <span>12/2020 - 12/2023</span>
+              <span>{homeData.projectDate}</span>
               {/* <br /><br /> */}
               <span>
-                Management System primarily consists of numerous lists and
-                forms. To address this, my company provides a visual
-                drag-and-drop editor and a configuration tool developed based on
-                Formily framework. These tools help developers quickly build
-                forms and list pages in the back-end management framework...
+                {
+                homeData?.projectDetailList?.map((item, index) => (
+                  <span key={index}>{item}</span>
+                ))
+              }
               </span>
             </div>
             <a className={styles.detailMore}>More +</a>

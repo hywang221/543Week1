@@ -16,7 +16,9 @@ function Nav() {
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.logo}>Logo</div>
+        <div className={styles.logo}>
+          <img src={new URL(`../images/${"resume-logo2.png"}`, import.meta.url).href} className={styles.logoImg} alt="logo" />
+        </div>
         <div className={styles.headerRight}>
           <div
             className={`${styles.headerRightItem} ${

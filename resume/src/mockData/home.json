@@ -1,0 +1,23 @@
+{
+  "name": "Hongyang Wang",
+  "position": "Front-End Engineer",
+  "phone": "+1-312-434-1065",
+  "avatarUrl": "avatar.jpg",
+  "skillDetailList": [
+    "Proficient in Modern front-end frameworks, including React, VueJs, AngularJs.",
+    "Proficient in front-end build automation tools, including Webpack and Vite.",
+    "Proficient in Node.js, Express, and MongoDB.",
+    "Proficient in CSS preprocessor technologies: SASS and LESS..."
+  ],
+  "companyName": "JD.com",
+  "companyDetailList": [
+    "Led 4 front-end developers in completing the design, development, and deployment of various technical projects, such as form and table visualization and micro-frontend routing refactoring.",
+    "Responsible for maintaining and managing the company’s core component library, @dada/form.",
+    "Conducted the first round of interviews..."
+  ],
+  "projectTitle": "Form and Table Visualization",
+  "projectDate": "12/2020 - 12/2023",
+  "projectDetailList": [
+    "Management System primarily consists of numerous lists and forms. To address this, my company provides a visual drag-and-drop editor and a configuration tool developed based on Formily framework. These tools help developers quickly build forms and list pages in the back-end management framework..."
+  ]
+}
