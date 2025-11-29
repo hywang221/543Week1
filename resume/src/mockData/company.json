@@ -1,0 +1,13 @@
+{
+  "companyList": [
+    {
+      "name": "JD.com",
+      "position": "Front-end Engineer",
+      "describeList": [
+        "Led 4 front-end developers in completing the design, development, and deployment of various technical projects, such as form and table visualization and micro-frontend routing refactoring.",
+        "Responsible for maintaining and managing the company’s core component library, @dada/form.",
+        "Conducted the first round of interviews."
+      ]
+    }
+  ]
+}
