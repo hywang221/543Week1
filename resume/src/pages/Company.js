@@ -8,7 +8,7 @@ import { Button } from "antd";
 
 function Company() {
   // const [count, setCount] = useState(0)
-  const count = useSelector(state => state.counter.value);
+  const count = useSelector(state => state?.counter?.value);
 
   return (
     <>

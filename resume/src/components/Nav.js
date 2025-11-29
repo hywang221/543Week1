@@ -32,7 +32,7 @@ function Nav() {
               navIndex === 2 ? styles.active : ""
             }`}
             onClick={onSelectNav.bind(this, 2)}>
-            <Link to="/company">Skill</Link>
+            <Link to="/skill">Skill</Link>
           </div>
           <div className={`${styles.headerRightItem} ${
               navIndex === 3 ? styles.active : ""
