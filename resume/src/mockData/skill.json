@@ -1,9 +1,22 @@
-[{
-  "content": "Proficient in Modern front-end frameworks, including React, VueJs, AngularJs."
-}, {
-  "content": "Proficient in front-end build automation tools, including Webpack and Vite."
-}, {
-  "content": "Proficient in Node.js, Express, and MongoDB."
-}, {
-  "content": "Proficient in CSS preprocessor technologies: SASS and LESS"
-}]
+{
+  "skillList": [
+    {
+      "content": "Proficient in Modern front-end frameworks, including React, VueJs, AngularJs."
+    },
+    {
+      "content": "Proficient in front-end build automation tools, including Webpack and Vite."
+    },
+    {
+      "content": "Proficient in Node.js, Express, and MongoDB."
+    },
+    {
+      "content": "Proficient in CSS preprocessor technologies: SASS and LESS."
+    },
+    {
+      "content": "Proficient in Git code management tools."
+    }, 
+    {
+      "content": "Proficient in HTML, CSS, and JavaScript, with a solid understanding of front-end development standards and W3C specifications."
+    }
+  ]
+}

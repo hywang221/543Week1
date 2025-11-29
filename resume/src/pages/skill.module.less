@@ -27,7 +27,7 @@
       // position: absolute;
       // top: 0;
       // left: 50%;
-      // transform-origin: 50% 100%; 
+      // transform-origin: 50% 100%;
       // transition: transform 0.3s ease;
       // &:nth-child(1) {
       //   transform: translateX(-50%) rotate(0deg) translateY(-100px);
@@ -60,7 +60,46 @@
       }
     }
   }
-  .skillListWrapper {
-    
+  .detailItem {
+    position: relative;
+    margin-bottom: 20px;
+    max-width: calc(100% - 380px);
+    .detailTitle {
+      font-weight: bold;
+      font-size: 26px;
+      margin-bottom: 10px;
+      position: relative;
+      height: 36px;
+      line-height: 36px;
+      &:before {
+        content: "";
+        position: absolute;
+        left: -12px;
+        top: 9px;
+        height: 20px;
+        width: 4px;
+        background: #4096ff;
+        display: block;
+        border-radius: 1px;
+      }
+    }
+    .detailItemContent {
+      span {
+        margin-bottom: 20px;
+        display: block;
+      }
+      .detailItemTitle {
+        font-weight: bold;
+      }
+    }
+
+    .detailMore {
+      position: absolute;
+      right: 30px;
+      top: 10px;
+      color: #4096ff;
+      font-weight: bold;
+      cursor: pointer;
+    }
   }
 }

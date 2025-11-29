@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 // import { useSelector } from "react-redux";
 
 import { Button } from "antd";
@@ -8,6 +8,11 @@ import styles from "./nav.module.less";
 
 function Nav() {
   const [navIndex, setNavIndex] = useState(1);
+  const location = useLocation();
+
+  const isActive = (path) => {
+    return location.pathname === path;
+  };
 
   const onSelectNav = (index) => {
     setNavIndex(index);
@@ -22,20 +27,20 @@ function Nav() {
         <div className={styles.headerRight}>
           <div
             className={`${styles.headerRightItem} ${
-              navIndex === 1 ? styles.active : ""
+              isActive('/') ? styles.active : ""
             }`}
             onClick={onSelectNav.bind(this, 1)}
           >
             <Link to="/">Home</Link>
           </div>
           <div className={`${styles.headerRightItem} ${
-              navIndex === 2 ? styles.active : ""
+              isActive('/skill') ? styles.active : ""
             }`}
             onClick={onSelectNav.bind(this, 2)}>
             <Link to="/skill">Skill</Link>
           </div>
           <div className={`${styles.headerRightItem} ${
-              navIndex === 3 ? styles.active : ""
+              isActive('/company') ? styles.active : ""
             }`}
             onClick={onSelectNav.bind(this, 3)}>
             <Link to="/company">Company</Link>

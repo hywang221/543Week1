@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Company from "./pages/Company";
 import Skill from "./pages/Skill"
 import Nav from "./components/Nav";
+import Footer from "./components/Footer";
 import "./App.less";
 
 import { Button } from "antd";
@@ -21,6 +22,7 @@ function App() {
           <Route path="/skill" element={<Skill />} />
           <Route path="/company" element={<Company />} />
         </Routes>
+        <Footer />
         {/* <header className="header">
           <div className="logo">Logo</div>
           <div className="header-right">

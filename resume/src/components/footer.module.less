@@ -1,0 +1,45 @@
+.footer {
+  height: 180px;
+  background: #111;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  .footerContent {
+    width: 960px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    height: 100%;
+    .footerLeft {
+      padding-top: 40px;
+      float: left;
+      .footerLeftTitle {
+        font-size: 24px;
+        font-weight: bold;
+      }
+      .footerLeftItem {
+        width: 360px;
+        margin-top: 20px;
+        span {
+          display: block;
+          margin-top: 10px;
+        }
+      }
+    }
+    .footerRight {
+      float: right;
+      height: 100%;
+      position: relative;
+      .footerCode {
+        width: 86px;
+        height: 86px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

@@ -10,7 +10,8 @@ import { Button, Tag } from "antd";
 function Skill() {
   // const [count, setCount] = useState(0)
   const skillData = useSelector(state => state.skillData);
-  console.log('skillData', skillData)
+  const homeData = useSelector(state => state.homeData);
+  console.log('skillData', skillData, homeData)
 
   return (
     <div className={styles.skillWrapper}>
@@ -41,14 +42,17 @@ function Skill() {
           <Tag color="#87d068" className={styles.tagName}>Node</Tag>
         </div>
       </div>
-      {/* <div className={styles.skillListWrapper}>
-        {
-          skillData ? skillData.map((item, index) => (
-            <span key={index}>{item?.content}</span>
-          )) : <div></div>
-        }
+      <div className={styles.detailItem}>
+        <div className={styles.detailItemContent}>
+          {
+            skillData ? skillData?.skillList?.map((item, index) => (
+              <span key={index}>{item.content}</span>
+            )) : <div></div>
+          }
+        </div>
         
-      </div> */}
+        
+      </div>
     </div>
   );
 }

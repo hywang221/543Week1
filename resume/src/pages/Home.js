@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 import { Button } from "antd";
@@ -35,7 +35,7 @@ function Home() {
               }
               
             </div>
-            <a className={styles.detailMore}>More +</a>
+            <Link to="/skill" className={styles.detailMore}>More +</Link>
           </div>
           <div className={styles.detailItem}>
             <div className={styles.detailTitle}>Company Introduction</div>
@@ -47,7 +47,7 @@ function Home() {
                 ))
               }
             </div>
-            <a className={styles.detailMore}>More +</a>
+            <Link to="/company" className={styles.detailMore}>More +</Link>
           </div>
           <div className={styles.detailItem}>
             <div className={styles.detailTitle}>Project Experience</div>
@@ -70,7 +70,7 @@ function Home() {
           </div>
         </section>
       </section>
-      <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
         <div className={styles.footerContent}>
           <div className={styles.footerLeft}>
             <div className={styles.footerLeftTitle}>Contact Info</div>
@@ -83,7 +83,7 @@ function Home() {
             <img className={styles.footerCode} src={new URL(`../images/${"w_code.jpg"}`, import.meta.url).href} />
           </div>
         </div>
-      </footer>
+      </footer> */}
     </>
   );
 }
