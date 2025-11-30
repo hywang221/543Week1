@@ -49,14 +49,14 @@ function Nav() {
               navIndex === 4 ? styles.active : ""
             }`}
             onClick={onSelectNav.bind(this, 4)}>
-            <Link to="/company">Work</Link>
+            <Link to="/work">Work</Link>
           </div>
-          <div className={`${styles.headerRightItem} ${
+          {/* <div className={`${styles.headerRightItem} ${
               navIndex === 5 ? styles.active : ""
             }`}
             onClick={onSelectNav.bind(this, 5)}>
             <Link to="/company">Contact</Link>
-          </div>
+          </div> */}
           <div className={styles.animation}></div>
           <div className={styles.animationShadow}></div>
         </div>

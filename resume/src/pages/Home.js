@@ -66,7 +66,7 @@ function Home() {
               }
               </span>
             </div>
-            <a className={styles.detailMore}>More +</a>
+            <Link to="/work" className={styles.detailMore}>More +</Link>
           </div>
         </section>
       </section>

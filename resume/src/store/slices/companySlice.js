@@ -8,7 +8,7 @@ const companySlice = createSlice({
     increment: (state) => { state.value++ },
     decrement: (state) => { state.value-- },
     addBy: (state, action) => { state.value += action.payload },
-    searchCompany: (state, action) => {
+    onFetchSearch: (state, action) => {
       const name = action.payload;
       state.companyList = companyData?.companyList?.filter(item => {
         return item.name.includes(name);
@@ -17,5 +17,5 @@ const companySlice = createSlice({
   }
 })
 
-export const { increment, decrement, addBy, searchCompany } = companySlice.actions
+export const { increment, decrement, addBy, onFetchSearch } = companySlice.actions
 export default companySlice.reducer

@@ -1,48 +1,51 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { onFetchSearch } from '../store/slices/companySlice'
-import styles from "./company.module.less";
+import { onFetchSearch } from '../store/slices/workSlice'
+import styles from "./work.module.less";
 
-import { Button, Input } from "antd";
+import { Button, Select } from "antd";
 
-function Company() {
-  const [searchName, setSearchName] = useState("");
+const frameworkOptions = [
+  {value: '', label: 'All'},
+  {value: 'react', label: 'React'},
+  {value: 'vue', label: 'Vue'},
+  {value: 'angular', label: 'Angular'},
+]
+
+function Work() {
+  const [framework, setFramework] = useState("");
   const dispatch = useDispatch()
-  const companyData = useSelector((state) => state?.companyData);
+  const workData = useSelector((state) => state?.workData);
 
-  const onChangeName = (e) => {
-    setSearchName(e?.target?.value);
-  }
-
-  const onSearch = () => {
-    dispatch(onFetchSearch(searchName));
+  const onChangeFramework = (value) => {
+    console.log('value', value)
+    setFramework(value);
+    dispatch(onFetchSearch(value));
   }
 
   const onReset = () => {
-    setSearchName("");
+    setFramework("");
     dispatch(onFetchSearch(""));
   }
 
   return (
     <>
       <div className={styles.companyWrapper}>
-        <h1 className={styles.companyTitle}>Company List</h1>
+        <h1 className={styles.companyTitle}>Work List</h1>
         <div className={styles.searchWrapper}>
-          <Input
-            className={styles.searchInp}
-            value={searchName}
-            onChange={onChangeName}
-            placeholder="Please enter the company name"
+          <Select
+            className={styles.selectItem}
+            value={framework}
+            onChange={onChangeFramework}
+            options={frameworkOptions}
+            placeholder="Please select the framework"
           />
-          <Button type="primary" className={styles.searchBtn} onClick={onSearch}>
-            Search Name
-          </Button>
           <Button className={styles.searchBtn} onClick={onReset}>
             Reset
           </Button>
         </div>
-        {companyData?.companyList?.map((item, index) => (
+        {workData?.workList?.map((item, index) => (
           <div className={styles.detailItem} key={index}>
             <div className={styles.detailTitle}>{item?.name}</div>
             <div className={styles.detailItemContent}>
@@ -57,7 +60,7 @@ function Company() {
           </div>
         ))}
         {
-          companyData?.companyList?.length === 0 &&
+          workData?.workList?.length === 0 &&
           <h2>No Search Data</h2>
         }
       </div>
@@ -65,4 +68,4 @@ function Company() {
   );
 }
 
-export default Company;
+export default Work;
