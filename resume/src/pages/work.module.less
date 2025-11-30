@@ -1,6 +1,7 @@
-.companyWrapper {
+.workWrapper {
   position: relative;
-  .companyTitle {
+  padding-bottom: 40px;
+  .workTitle {
     margin-top: 20px;
     margin-bottom: 40px;
   }
@@ -25,6 +26,8 @@
       position: relative;
       height: 36px;
       line-height: 36px;
+      display: flex;
+      align-items: center;
       &:before {
         content: "";
         position: absolute;
@@ -36,14 +39,23 @@
         display: block;
         border-radius: 1px;
       }
+      .workTag {
+        margin-left: 20px;
+        width: 80px;
+        height: 30px;
+        line-height: 30px;
+        font-size: 16px;
+        padding: 0;
+        text-align: center;
+      }
     }
     .detailItemContent {
       position: relative;
-      padding-left: 120px;
+      padding-left: 220px;
       padding-right: 40px;
-      .companyImg {
-        width: 100px;
-        height: 100px;
+      .workImg {
+        width: 200px;
+        height: 200px;
         border-radius: 8px;
         position: absolute;
         left: 0;
@@ -55,6 +67,7 @@
       }
       .detailItemTitle {
         font-weight: bold;
+        padding-top: 15px;
       }
     }
 

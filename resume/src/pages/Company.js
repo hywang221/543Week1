@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { onFetchSearch } from '../store/slices/companySlice'
 import styles from "./company.module.less";
 
-import { Button, Input } from "antd";
+import { Button, Input, Image } from "antd";
 
 function Company() {
   const [searchName, setSearchName] = useState("");
@@ -46,7 +46,7 @@ function Company() {
           <div className={styles.detailItem} key={index}>
             <div className={styles.detailTitle}>{item?.name}</div>
             <div className={styles.detailItemContent}>
-              <img className={styles.companyImg} src={new URL(`../images/${"company1.jpeg"}`, import.meta.url).href} alt="company" />
+              <img className={styles.companyImg} src={new URL(`../images/${item.imgUrl}`, import.meta.url).href} alt="company" />
               <span className={styles.detailItemTitle}>
                 {item?.position}
               </span>

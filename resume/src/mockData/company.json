@@ -3,9 +3,30 @@
     {
       "name": "JD.com",
       "position": "Front-end Engineer",
+      "imgUrl": "company1.jpeg",
       "describeList": [
         "Led 4 front-end developers in completing the design, development, and deployment of various technical projects, such as form and table visualization and micro-frontend routing refactoring.",
         "Responsible for maintaining and managing the company’s core component library, @dada/form.",
+        "Conducted the first round of interviews."
+      ]
+    },
+    {
+      "name": "Weimob Inc",
+      "position": "Front-end Engineer",
+      "imgUrl": "company2.jpg",
+      "describeList": [
+        "Collaborated closely with project managers and technical teams to develop high-availability, high-performance weimob systems using React, AngularJS, and Vue.",
+        "Responsible for the development and maintenance of the company’s core front-end component library",
+        "Conducted the first round of interviews."
+      ]
+    },
+    {
+      "name": "NewCore Inc",
+      "position": "Front-end Engineer",
+      "imgUrl": "company3.png",
+      "describeList": [
+        "Collaborated with project managers and technical teams to develop the new core cloud platform for the Smart Factory ERP system using React and AngularJS, delivering high availability and strong performance",
+        "Independently designed and implemented a data visualization system with Vue.js.",
         "Conducted the first round of interviews."
       ]
     }

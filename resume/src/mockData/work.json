@@ -1,14 +1,63 @@
 {
   "workList": [
     {
-      "name": "JD.com",
+      "name": "Form and Table Visualization",
       "position": "Front-end Engineer",
       "companyName": "JD.com",
-      "framework": "react",
+      "framework": "React",
+      "imgUrl": "work1.jpg",
       "describeList": [
-        "Led 4 front-end developers in completing the design, development, and deployment of various technical projects, such as form and table visualization and micro-frontend routing refactoring.",
-        "Responsible for maintaining and managing the company’s core component library, @dada/form.",
-        "Conducted the first round of interviews."
+        "Management System primarily consists of numerous lists and forms. To address this, my company provides a visual drag-and-drop editor and a configuration tool developed based on Formily framework. These tools help developers quickly build forms and list pages in the back-end management framework..."
+      ],
+      "technicalList": [
+        "Use React + Redux + AntDesign.",
+        "Routine maintenance of form visualization.",
+        "Management of configuration-related npm packages."
+      ]
+    },
+    {
+      "name": "The New Core Analytics System ",
+      "position": "Front-end Engineer",
+      "companyName": "New core",
+      "framework": "Vue",
+      "imgUrl": "work2.png",
+      "describeList": [
+        "By collecting user interaction records with the New Core Cloud system and presenting them on the website in the form of tables and charts, we aim to statistically analyze the usage of the New Core Cloud system."
+      ],
+      "technicalList": [
+        "Built the website using Webpack and vue-cli.",
+        "Implementing page styles using Sass.",
+        "Management of configuration-related npm packages."
+      ]
+    },
+    {
+      "name": "Intelligent Factory ERP System New Core Cloud",
+      "position": "Front-end Engineer",
+      "companyName": "JD.com",
+      "framework": "Angular",
+      "imgUrl": "work1.jpg",
+      "describeList": [
+        "The New Core Cloud is a SaaS-modeled ERP system designed specifically for factories, covering sales, production, and inventory managemen"
+      ],
+      "technicalList": [
+        "Implementing page layout and logic operations using AngularJS.",
+        "Implementing page styles using Sass.",
+        "3.Implementing functionalities related to time and charts on the page using plugins such as moment and echarts."
+      ]
+    },
+    {
+      "name": "Micro-Frontend Routing Refactoring",
+      "position": "Front-end Engineer",
+      "companyName": "JD.com",
+      "framework": "React",
+      "imgUrl": "work1.jpg",
+      "describeList": [
+        "Management System primarily consists of numerous lists and forms. To address this, my company provides a visual drag-and-drop editor and a configuration tool developed based on Formily framework. These tools help developers quickly build forms and list pages in the back-end management framework..."
+      ],
+      "technicalList": [
+        "Use React + Redux + AntDesign.",
+        "Routine maintenance of form visualization.",
+        "Management of configuration-related npm packages."
       ]
     }
   ]

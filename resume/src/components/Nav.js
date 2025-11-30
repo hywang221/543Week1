@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route } from "react-router-dom";
 import { Link, useLocation } from "react-router-dom";
 // import { useSelector } from "react-redux";
@@ -6,16 +6,18 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "antd";
 import styles from "./nav.module.less";
 
+
 function Nav() {
-  const [navIndex, setNavIndex] = useState(1);
+  // const [navIndex, setNavIndex] = useState(1);
   const location = useLocation();
 
   const isActive = (path) => {
+    console.log('pathname', location.pathname)
     return location.pathname === path;
   };
 
-  const onSelectNav = (index) => {
-    setNavIndex(index);
+  const onSelectNav = () => {
+    // setNavIndex(index);
   };
 
   return (
@@ -46,7 +48,7 @@ function Nav() {
             <Link to="/company">Company</Link>
           </div>
           <div className={`${styles.headerRightItem} ${
-              navIndex === 4 ? styles.active : ""
+              isActive('/work') ? styles.active : ""
             }`}
             onClick={onSelectNav.bind(this, 4)}>
             <Link to="/work">Work</Link>

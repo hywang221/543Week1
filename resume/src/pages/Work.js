@@ -4,14 +4,20 @@ import { useSelector, useDispatch } from "react-redux";
 import { onFetchSearch } from '../store/slices/workSlice'
 import styles from "./work.module.less";
 
-import { Button, Select } from "antd";
+import { Button, Select, Image, Tag } from "antd";
 
 const frameworkOptions = [
   {value: '', label: 'All'},
-  {value: 'react', label: 'React'},
-  {value: 'vue', label: 'Vue'},
-  {value: 'angular', label: 'Angular'},
+  {value: 'React', label: 'React'},
+  {value: 'Vue', label: 'Vue'},
+  {value: 'Angular', label: 'Angular'},
 ]
+
+const frameworkColors = {
+  React: "#108ee9",
+  Vue: "rgba(82, 196, 26, 0.8)",
+  Angular: "geekblue",
+}
 
 function Work() {
   const [framework, setFramework] = useState("");
@@ -19,7 +25,6 @@ function Work() {
   const workData = useSelector((state) => state?.workData);
 
   const onChangeFramework = (value) => {
-    console.log('value', value)
     setFramework(value);
     dispatch(onFetchSearch(value));
   }
@@ -31,8 +36,8 @@ function Work() {
 
   return (
     <>
-      <div className={styles.companyWrapper}>
-        <h1 className={styles.companyTitle}>Work List</h1>
+      <div className={styles.workWrapper}>
+        <h1 className={styles.workTitle}>Work List</h1>
         <div className={styles.searchWrapper}>
           <Select
             className={styles.selectItem}
@@ -47,14 +52,23 @@ function Work() {
         </div>
         {workData?.workList?.map((item, index) => (
           <div className={styles.detailItem} key={index}>
-            <div className={styles.detailTitle}>{item?.name}</div>
+            <div className={styles.detailTitle}>
+              <span>{item?.name}</span>
+              <Tag color={frameworkColors[item?.framework]} className={styles.workTag}>{item?.framework}</Tag>
+            </div>
             <div className={styles.detailItemContent}>
-              <img className={styles.companyImg} src={new URL(`../images/${"company1.jpeg"}`, import.meta.url).href} alt="company" />
+              <div className={styles.workImg}>
+                <Image className={styles.workImg} src={new URL(`../images/${item.imgUrl}`, import.meta.url).href} alt="work image" />
+              </div>
               <span className={styles.detailItemTitle}>
                 {item?.position}
               </span>
               {item?.describeList?.map((describeItem, describeIndex) => (
                 <span key={describeIndex}>{describeItem}</span>
+              ))}
+              <span className={styles.detailItemTitle}>Technical Highlights</span>
+              {item?.technicalList?.map((tnItem, tnIndex) => (
+                <span key={tnIndex}>{tnIndex+1}. {tnItem}</span>
               ))}
             </div>
           </div>
