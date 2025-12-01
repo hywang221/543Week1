@@ -1,16 +1,100 @@
-# React + Vite
+# Online FE Resume (React + Redux + Vite + AntDesign)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Website Url   
+https://wonderful-sky-043b1361e.1.azurestaticapps.net/resume/dist
 
-Currently, two official plugins are available:
+## Project Overview   
+This project is a front-end engineer’s online resume website designed to be shared with potential employers during job applications. It includes several key modules such as Personal Information, Skills, Work Experience, and Project Showcase.   
+The landing page provides a clean overview of each module, with a navigation bar at the top that allows users to jump to detailed sections.   
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The Company page displays a list of companies, along with a search bar at the top that allows users to quickly filter companies by name.
+The Project Experience page includes a dropdown menu that lets users filter projects based on the framework used.   
 
-## React Compiler
+## Technologies used       
+Framework: React.     
+Routing: React Router.     
+State Management: Redux.     
+UI Library: Ant Design.     
+Build Tool: Vite.     
+Code Linting: ESLint.    
+Source Control: Git, Github.      
+Cloud Deployment: Azure.     
+This project is built with ```React``` using ```Vite```, incorporates ```Redux``` for state management, uses ```React Router``` to handle client-side routing, and uses ```Ant Design``` as the UI component library. The project uses ```Git``` for version control and is hosted on ```GitHub```. It is deployed to the cloud using ```Azure```.    
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Lessons Learned    
+Through this project, I learned how to build a React application using Vite and deploy it to Azure. I used Redux to load data from local JSON files, simulating backend API calls to dynamically render the website content. By implementing search fields and dropdown filters, I became more proficient in retrieving and processing data based on user-selected conditions and displaying the results on the frontend.   
 
-## Expanding the ESLint configuration
+For the navigation bar, I designed a CSS3 slider highlight effect, which helped me gain deeper experience with CSS3 animations and styling.   
+Overall, this project not only strengthened my front-end development skills, but also allowed me to experience the full development lifecycle—including project planning, design, and progress management—giving me a more comprehensive understanding of front-end engineering.    
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Future scope    
+Due to time constraints, many features have not yet been implemented. In the future, I plan to improve mobile responsiveness and add internationalization support to enable multilingual displays.   
+For the Project Experience page, I intend to include video sections so that employers can better understand the showcased projects.   
+I am also considering adding user authentication to display different content based on user roles and permissions.   
+
+
+## Project setup, start and build   
+Please use npm version 22 or above.   
+```
+# Install project dependencies
+npm install
+
+# Start the project
+npm run dev
+
+# Build the project
+npm run build
+```
+
+## Project Structure   
+```
+├─ resume
+│  ├─ README.md
+│  ├─ eslint.config.js
+│  ├─ img
+│  ├─ index.html
+│  ├─ package-lock.json
+│  ├─ package.json
+│  ├─ public
+│  │  └─ vite.svg
+│  ├─ src
+│  │  ├─ App.js                         # Root component
+│  │  ├─ App.less
+│  │  ├─ assets
+│  │  ├─ components                     # Components
+│  │  │  ├─ Footer.js
+│  │  │  ├─ Nav.js
+│  │  │  ├─ footer.module.less
+│  │  │  └─ nav.module.less
+│  │  ├─ images
+│  │  ├─ index.css
+│  │  ├─ main.js                        # Application entry file
+│  │  ├─ mockData                       # Mock Data
+│  │  │  ├─ company.json
+│  │  │  ├─ home.json
+│  │  │  ├─ skill.json
+│  │  │  └─ work.json
+│  │  ├─ pages                          # Page-level components (views)
+│  │  │  ├─ Company.js
+│  │  │  ├─ Home.js
+│  │  │  ├─ Skill.js
+│  │  │  ├─ Work.js
+│  │  │  ├─ company.module.less
+│  │  │  ├─ home.module.less
+│  │  │  ├─ skill.module.less
+│  │  │  └─ work.module.less
+│  │  └─ store                          # State Management
+│  │     ├─ index.js
+│  │     └─ slices
+│  │        ├─ companySlice.js
+│  │        ├─ counterSlice.js
+│  │        ├─ homeSlice.js
+│  │        ├─ skillSlice.js
+│  │        └─ workSlice.js
+│  └─ vite.config.js
+
+```
+
+
+
+
