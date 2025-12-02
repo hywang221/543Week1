@@ -11,7 +11,7 @@ const companySlice = createSlice({
     onFetchSearch: (state, action) => {
       const name = action.payload;
       state.companyList = companyData?.companyList?.filter(item => {
-        return item.name.includes(name);
+        return item?.name?.toLowerCase()?.includes(name?.toLowerCase() || '');
       })
     }
   }

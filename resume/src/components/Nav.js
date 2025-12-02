@@ -51,7 +51,7 @@ function Nav() {
               isActive('/work') ? styles.active : ""
             }`}
             onClick={onSelectNav.bind(this, 4)}>
-            <Link to="/work">Work</Link>
+            <Link to="/work">Project</Link>
           </div>
           {/* <div className={`${styles.headerRightItem} ${
               navIndex === 5 ? styles.active : ""

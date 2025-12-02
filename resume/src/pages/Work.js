@@ -37,7 +37,7 @@ function Work() {
   return (
     <>
       <div className={styles.workWrapper}>
-        <h1 className={styles.workTitle}>Work List</h1>
+        <h1 className={styles.workTitle}>Project List</h1>
         <div className={styles.searchWrapper}>
           <Select
             className={styles.selectItem}
