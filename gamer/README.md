@@ -2,6 +2,15 @@
 
 This is a Switch Game Information System where users can browse Nintendo Switch game details, view player reviews, and save their favorite games to a personal collection.   
 (This is a Vue 3 + Vite project, using Element Plus as the UI component library)  
+
+## Technologies used       
+Framework: ```Vue```.     
+Routing: ```Vue Router```.     
+UI Library: ```Element Plus```.     
+Build Tool: ```Vite```.     
+Source Control: ```Git, Github```.      
+Cloud Deployment: ```Azure```.   
+
 ## Website Url   
 https://wonderful-sky-043b1361e.1.azurestaticapps.net/gamer/dist/index.html
 
