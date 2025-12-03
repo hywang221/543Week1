@@ -6,9 +6,24 @@ https://wonderful-sky-043b1361e.1.azurestaticapps.net/resume/dist
 ## Project Overview   
 This project is a front-end engineer’s online resume website designed to be shared with potential employers during job applications. It includes several key modules such as Personal Information, Skills, Work Experience, and Project Showcase.   
 
+
 The landing page provides a clean overview of each module, with a navigation bar at the top that allows users to jump to detailed sections.   
 The Company page displays a list of companies, along with a search bar at the top that allows users to quickly filter companies by name.
 The Project Experience page includes a dropdown menu that lets users filter projects based on the framework used.   
+
+## Overview of Framework Choice    
+I chose ```React``` to build my project. ```React``` is a popular front-end framework that makes it easy to create reusable components and build interactive user interfaces.   
+
+#### Justification   
+```React``` fits the needs of my project because:   
+
+It handles multiple pages and dynamic content very well.   
+```React Router``` makes navigation simple.   
+```Redux``` helps manage data across different pages.   
+It works smoothly with UI libraries like ```Ant Design```.   
+```React``` is easy to maintain and scale when the project grows.   
+
+Overall, ```React``` allowed me to build the project faster, keep the code organized, and meet all the project requirements.   
 
 ## Technologies used       
 Framework: ```React```.     
