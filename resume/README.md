@@ -12,7 +12,8 @@ The Company page displays a list of companies, along with a search bar at the to
 The Project Experience page includes a dropdown menu that lets users filter projects based on the framework used.   
 
 ## Overview of Framework Choice    
-I chose ```React``` to build my project. ```React``` is a popular front-end framework that makes it easy to create reusable components and build interactive user interfaces.   
+I chose ```React``` because it is simple, flexible, and fits my project needs better than ```Vue``` or ```Angular```. ```React```’s component-based structure made it easy to build reusable UI parts, and its ecosystem—especially ```React Router```, ```Redux```, and ```Ant Design```—helped me develop features quickly. I am also more familiar with ```React```, so it allowed me to complete the project efficiently.     
+Additionally, my project is an online resume website designed for job applications, and I aim to work in ```React development```. Using ```React``` for this project allows me to showcase my skills to potential employers.    
 
 #### Justification   
 ```React``` fits the needs of my project because:   
