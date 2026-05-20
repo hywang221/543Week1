@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏UX作品集 · 全幅视频展示</title>
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            background: #f5f7fb;
+            color: #1e1e2f;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* 导航栏 */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            background: rgba(245, 247, 251, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, #6b5bff, #b86bff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            font-weight: 500;
+            color: #3b3b4d;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+            cursor: pointer;
+            padding: 8px 0;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-links a:hover { 
+            color: #6b5bff;
+            border-bottom-color: #6b5bff;
+        }
+
+        /* hero 区域 */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 0 40px;
+        }
+
+        .hero-intro {
+            flex: 1 1 300px;
+        }
+
+        .hero-intro .badge {
+            background: #e9e6ff;
+            color: #4f46e5;
+            font-size: 0.9rem;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 40px;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .hero-intro h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            background: linear-gradient(145deg, #1e1e2f, #4a3f96);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-intro p {
+            font-size: 1.2rem;
+            color: #4f4f66;
+            max-width: 500px;
+            margin-bottom: 24px;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 36px;
+        }
+        .stat-item h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #1e1e2f;
+        }
+        .stat-item p {
+            font-size: 0.95rem;
+            color: #6b6b85;
+        }
+
+        .hero-avatar {
+            flex: 0 0 280px;
+            text-align: center;
+        }
+        .avatar-frame {
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c1b6ff, #b1e5ff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            box-shadow: 0 25px 35px -10px rgba(75, 60, 200, 0.3);
+            border: 5px solid white;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .section-title {
+            margin: 60px 0 32px;
+        }
+        .section-title h2 {
+            font-size: 2.2rem;
+            font-weight: 600;
+        }
+
+        /* 卡片网格 */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 28px;
+            margin-bottom: 60px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 28px;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.08);
+            transition: transform 0.25s ease, box-shadow 0.3s;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        .project-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 24px 36px -12px rgba(85, 62, 200, 0.18);
+        }
+
+        .card-bg {
+            height: 160px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 12px 16px;
+            color: white;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+        }
+        .bg-label {
+            background: rgba(255,255,255,0.2);
+            backdrop-filter: blur(8px);
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(255,255,255,0.3);
+            color: white;
+        }
+
+        .card-content {
+            padding: 20px 20px 18px;
+            flex: 1;
+        }
+
+        .card-title h3 {
+            font-size: 1.45rem;
+            font-weight: 650;
+            margin-bottom: 8px;
+        }
+        .card-tags {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin: 12px 0 14px;
+        }
+        .tag {
+            background: #f0f0f8;
+            color: #46465e;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 40px;
+        }
+
+        .card-excerpt {
+            color: #5a5a72;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+            border-top: 1px solid #efeff5;
+            padding-top: 16px;
+        }
+        
+        .detail-btn {
+            background: #4f46e5;
+            border: none;
+            color: white;
+            font-weight: 600;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: 0.2s;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(79, 70, 229, 0.2);
+            pointer-events: auto;
+            position: relative;
+            z-index: 10;
+        }
+        .detail-btn i {
+            font-size: 0.8rem;
+            transition: transform 0.2s;
+        }
+        .detail-btn:hover {
+            background: #4338ca;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(79, 70, 229, 0.3);
+        }
+        .detail-btn:hover i {
+            transform: translateX(4px);
+        }
+
+        .proto-count {
+            color: #a0a0b8;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* 二级详情面板 - 修改为滑动图片样式 */
+        .project-detail-panel {
+            display: none;
+            background: white;
+            border-radius: 40px;
+            margin: 40px 0 70px;
+            padding: 40px 40px 50px;
+            box-shadow: 0 25px 45px -18px rgba(33,33,68,0.25);
+            border: 1px solid #ffffff50;
+        }
+
+        .detail-header {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        
+        .close-detail {
+            background: #f0f0fa;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            color: #4a4a63;
+            cursor: pointer;
+            transition: 0.15s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .close-detail:hover {
+            background: #e1e1f0;
+            color: black;
+        }
+
+        .project-group {
+            margin-top: 35px;
+        }
+        .project-group:first-of-type {
+            margin-top: 10px;
+        }
+        .group-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2d2d4a;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .group-title i {
+            color: #6b5bff;
+            font-size: 1.6rem;
+        }
+        .group-desc {
+            background: #f3f1fe;
+            padding: 16px 22px;
+            border-radius: 20px;
+            margin-bottom: 25px;
+            color: #363652;
+            font-size: 1rem;
+            border-left: 5px solid #8a7aff;
+        }
+
+        /* ========= 新增：滑动图片区域 ========= */
+        .swiper-container {
+            position: relative;
+            width: 100%;
+            margin: 20px 0 30px;
+        }
+
+        .swiper-wrapper {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 10px 5px 20px;
+            scrollbar-width: thin;
+            scrollbar-color: #b1a6ff #e9e6ff;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .swiper-wrapper::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .swiper-wrapper::-webkit-scrollbar-track {
+            background: #e9e6ff;
+            border-radius: 20px;
+        }
+
+        .swiper-wrapper::-webkit-scrollbar-thumb {
+            background: #b1a6ff;
+            border-radius: 20px;
+        }
+
+        .swiper-wrapper::-webkit-scrollbar-thumb:hover {
+            background: #8f7aff;
+        }
+
+        .swiper-slide {
+            flex: 0 0 auto;
+            width: 260px;
+            scroll-snap-align: start;
+            background: #f8f8ff;
+            border-radius: 28px;
+            padding: 20px 12px 16px;
+            text-align: center;
+            box-shadow: 0 8px 20px -6px rgba(0,0,0,0.1);
+            border: 2px solid transparent;
+            transition: transform 0.2s, border-color 0.2s;
+            cursor: pointer;
+        }
+
+        .swiper-slide:hover {
+            border-color: #a594ff;
+            background: white;
+            transform: translateY(-4px);
+        }
+
+        .slide-img {
+            width: 100%;
+            aspect-ratio: 3/4;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 12px;
+            box-shadow: inset 0 -3px 0 rgba(0,0,0,0.1);
+            transition: all 0.2s;
+            overflow: hidden;
+        }
+
+        .swiper-slide span {
+            font-weight: 600;
+            color: #2e2e45;
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .swiper-slide p {
+            font-size: 0.85rem;
+            color: #6d6d8a;
+            line-height: 1.4;
+        }
+
+        /* 左右滑动提示 */
+        .swiper-hint {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin: 10px 0 20px;
+            color: #7a7a9a;
+            font-size: 0.9rem;
+        }
+
+        .swiper-hint i {
+            color: #6b5bff;
+            font-size: 1rem;
+            animation: slideHint 1.5s infinite;
+        }
+
+        @keyframes slideHint {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+            100% { transform: translateX(0); }
+        }
+
+        /* ========= 全屏居中视频区域 ========= */
+        .video-showcase {
+            width: 100%;
+            margin: 40px 0 70px;
+            border-radius: 32px;
+            overflow: hidden;
+            background: #0b0b1a;
+            box-shadow: 0 30px 50px -20px rgba(0,0,0,0.5);
+            aspect-ratio: 16 / 9;
+        }
+
+        .video-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-container video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: #0a0a1a;
+            cursor: pointer;
+        }
+
+        .custom-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80px;
+            height: 80px;
+            background: rgba(107, 91, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 3px solid white;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .video-container:hover .custom-play-btn {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: #4f46e5;
+            opacity: 1;
+        }
+
+        .video-hint {
+            text-align: center;
+            margin-top: 16px;
+            color: #6b6b89;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .video-hint i {
+            color: #6b5bff;
+        }
+
+        /* 模态框 - 放大查看图片 */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(10, 10, 30, 0.9);
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+
+        .modal-card {
+            max-width: 900px;
+            width: 90%;
+            background: white;
+            border-radius: 48px;
+            padding: 32px;
+            box-shadow: 0 35px 60px -20px black;
+            position: relative;
+            animation: modalPop 0.3s;
+        }
+
+        @keyframes modalPop {
+            0% { opacity: 0.7; transform: scale(0.96); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-img {
+            width: 100%;
+            border-radius: 28px;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 6rem;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 24px; right: 28px;
+            background: #efeff5;
+            border: none;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .close-modal:hover {
+            background: #e1e1f0;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            margin: 20px 0 8px;
+            color: #2e2e45;
+        }
+
+        .modal-desc {
+            color: #6a6a85;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .about-section, .contact-section {
+            scroll-margin-top: 80px;
+            padding: 60px 0;
+            border-top: 1px solid #e0e0f0;
+        }
+
+        .about-section h2, .contact-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #1e1e2f;
+        }
+
+        .about-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .about-text {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: #4a4a63;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .skills {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.05);
+        }
+
+        .skills h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: #36364f;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: #f0eefc;
+            color: #4f46e5;
+            padding: 8px 16px;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 30px;
+            border-radius: 30px;
+            text-align: center;
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-item i {
+            font-size: 2.5rem;
+            color: #6b5bff;
+            margin-bottom: 15px;
+        }
+
+        .contact-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: #2e2e45;
+        }
+
+        .contact-item p {
+            color: #6a6a85;
+            margin-bottom: 15px;
+        }
+
+        .contact-link {
+            display: inline-block;
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 20px;
+            border-radius: 30px;
+            background: #f0eefc;
+            transition: 0.2s;
+        }
+
+        .contact-link:hover {
+            background: #e1defa;
+        }
+
+        .edit-note {
+            background: #fffae6;
+            border-radius: 60px;
+            padding: 14px 24px;
+            color: #946800;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 30px 0 10px;
+            border: 1px dashed #ffc107;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0 50px;
+            color: #6b6b89;
+        }
+
+        @media (max-width: 700px) {
+            .hero { flex-direction: column-reverse; text-align: center; }
+            .hero-stats { justify-content: center; }
+            .navbar { flex-direction: column; gap: 15px; }
+            .nav-links { gap: 20px; }
+        }
+    </style>
+    <style>
+        .home-dragon {
+            position: absolute;
+            right: 0;
+            bottom: 50px;
+        }
+        .home-avatar {
+            width: 100%;
+            height: 130%;
+            margin-top: 30px;
+        }
+                    
+        .home-avatar-bg {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.2);
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        /* .pro-img {
+            width: 300%;
+            height: 100%;
+            margin-left: -90%;
+        } */
+        .cover-img {
+            width: auto;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 导航 -->
+        <nav class="navbar">
+            <span class="logo"><i class="fas fa-gamepad"></i> UX•Portfolio</span>
+            <div class="nav-links">
+                <a dataHref="projects">作品</a>
+                <a dataHref="about">关于我</a>
+                <a dataHref="contact">联系我</a>
+            </div>
+        </nav>
+
+        <!-- 首页 hero -->
+        <section class="hero">
+            <div class="hero-intro">
+                <span class="badge"><i class="fas fa-paint-brush"></i> 游戏UE策划/产品设计</span>
+                <h1>顾雅雯<br>Yvonne GU</h1>
+                <p>专注移动游戏6年，参与多款海内外游戏项目。擅长从用户心理出发，将情感化设计融入产品。</p>
+                <div class="hero-stats">
+                    <div class="stat-item"><h3>3个</h3><p>项目经验</p></div>
+                    <div class="stat-item"><h3>1个</h3><p>全流程上线</p></div>
+                    <div class="stat-item"><h3>6年</h3><p>游戏行业经验</p></div>
+                </div>
+                <div class="edit-note" style="margin-top: 28px;">
+                    <i class="fas fa-pencil-alt"></i> 我坚信好的用户体验应该像呼吸一样自然，而非炫酷繁杂的技巧堆砌。
+                </div>
+            </div>
+            <div class="hero-avatar">
+                <div class="avatar-frame">
+                    <!-- <i class="fas fa-dragon home-dragon"></i> -->
+                    <img src="./img/avatar.jpg" class="home-avatar" />
+                    <!-- <div class="home-avatar-bg"></div> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- 项目展示区标题 -->
+        <div class="section-title" id="projects">
+            <h2><i class="fas fa-mobile-alt" style="color: #6b5bff;"></i> 精选项目展示 </h2>
+        </div>
+
+        <!-- 卡片网格（三个项目）保持不变 -->
+        <div class="project-grid">
+            <!-- 项目1卡片 -->
+            <div class="project-card">
+                <div class="card-bg" style="background-image: url('./img/banner1.png');">
+                    <span class="bg-label">时光之门</span>
+                    <span class="bg-label">勇士竞技场</span>
+                    <span class="bg-label">远征地图</span>
+                </div>
+                <div class="card-content">
+                    <h3>代号：军团</h3>   
+                    <div class="card-tags">
+                        <span class="tag">竖屏</span>
+                        <span class="tag">原型绘制</span>
+                        <span class="tag">页面布局</span>
+                    </div>
+                    <div class="card-excerpt">一款轻度SLG手游，以Q版美漫画风为主，丰富的主城建造和大地图玩法，流畅的交互体验。</div>
+                    <div class="card-footer">
+                        <button class="detail-btn" onclick="window.openProjectGroup('group1')">
+                            查看详情 <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- 项目2卡片 -->
+            <div class="project-card">
+                <div class="card-bg" style="background-image: url('./img/banner2.png');">
+                    <span class="bg-label">组卡系统</span>
+                    <span class="bg-label">养成系统</span>
+                    <span class="bg-label">战斗系统</span>
+                </div>
+                <div class="card-content">
+                    <h3>数码宝贝：乐源重启（Beta封测）</h3>
+                    <div class="card-tags">
+                        <span class="tag">横屏</span>
+                        <span class="tag">交互优化</span>
+                        <span class="tag">动效设计</span>
+                    </div>
+                    <div class="card-excerpt">一款日漫IP主题的TCG手游，将传统桌面卡牌玩法移植到手机，成熟的核心玩法和精准的目标用户。</div>
+                    <div class="card-footer">
+                        
+                        <button class="detail-btn" onclick="window.openProjectGroup('group2')">
+                            查看详情 <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- 项目3卡片 -->
+            <!-- <div class="project-card">
+                <div class="card-bg" style="background-image: linear-gradient(145deg, #262161, #5f4bbb), url('https://placehold.co/600x400/433b8b/ffffff?text=宠物+赛博');">
+                    <span class="bg-label">首页</span>
+                    <span class="bg-label">社区</span>
+                </div>
+                <div class="card-content">
+                    <h3>“宠屿”（研发中）</h3>
+                    <div class="card-tags">
+                        <span class="tag">App</span>
+                        <span class="tag">宠物社交</span>
+                        <span class="tag">个人项目</span>
+                    </div>
+                    <div class="card-excerpt">一个专注于服务宠主和宠物的综合性社交平台，帮助宠主科学养宠，帮助流浪动物找到归属。</div>
+                    <div class="card-footer">
+                        
+                        <button class="detail-btn" onclick="window.openProjectGroup('group3')">
+                            查看详情 <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <!-- 二级详情面板 (滑动图片) -->
+        <div id="detailPanel" class="project-detail-panel"></div>
+
+        <!-- ========= 全屏居中视频区域 ========= -->
+        <div class="section-title">
+            <h2><i class="fas fa-video" style="color: #6b5bff;"></i> 游戏动效实录 </h2>
+        </div>
+
+        <div class="video-showcase">
+            <div class="video-container" id="videoContainer">
+                <!-- <video id="showcaseVideo" loop playsinline poster="https://placehold.co/1280x720/1a1a2f/9a8cff?text=点击播放+3D演示"> -->
+                <video id="showcaseVideo" loop playsinline controls>
+                    <source src="./video.mp4" type="video/mp4">
+                    您的浏览器不支持 video 标签。
+                </video>
+                <!-- <div class="custom-play-btn" id="playButton">
+                    <i class="fas fa-play"></i>
+                </div> -->
+            </div>
+        </div>
+        
+        <!-- 操作提示（点击视频切换播放/暂停） -->
+        <!-- <div class="video-hint">
+            <i class="fas fa-hand-pointer"></i> 点击视频播放/暂停 · 请将 <code>&lt;video&gt;</code> 的 <code>src</code> 替换为你自己的3D演示视频
+        </div> -->
+
+
+        <!-- 关于我区域 -->
+        <section class="about-section" id="about">
+            <h2><i class="fas fa-user-astronaut" style="color: #6b5bff;"></i> 个人介绍</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>嗨，我是顾雅雯，一名专注于游戏领域的产品设计师，拥有六年游戏行业经验，参与过上线项目，也从0开始参与过完整研发周期。</p>
+                    <p>我的设计理念是以玩家为中心，从数据出发，以体验为核心，专注于通过交互设计提升产品核心指标。通过动效音效等反馈强化沉浸感，给玩家沉浸式的游戏体验。满足各类玩家需求，降低新手的学习成本，同时兼顾老玩家的操作习惯。</p>
+                    <p><i class="fas fa-heart" style="color: #ff6b8b;"></i> 喜爱的游戏品类：解谜冒险、ARPG、模拟经营、SLG</p>
+                </div>
+                <div class="skills">
+                    <h3>核心能力</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">用户研究</span>
+                        <span class="skill-tag">Axure</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">Unity</span>
+                        <span class="skill-tag">Pixso</span>
+                        <span class="skill-tag">A/B测试</span>
+                         <span class="skill-tag">Blender</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系区域 -->
+        <section class="contact-section" id="contact">
+            <h2><i class="fas fa-paper-plane" style="color: #6b5bff;"></i> 联系我</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>862044990@qq.com</p>
+                    <a href="mailto:862044990@qq.com" class="contact-link">发送邮件</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p><a href="https://www.linkedin.com/in/yawen-gu-308619379/" target="_blank" style="text-decoration: none;">linkedin.com/in/yawen-gu</a></p>
+                    <a href="https://www.linkedin.com/in/yawen-gu-308619379/" target="_blank" class="contact-link">跳转</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 模态框 (用于放大查看图片) -->
+        <div id="modalOverlay" class="modal-overlay">
+            <div class="modal-card">
+                <button class="close-modal" id="closeModalBtn"><i class="fas fa-times"></i></button>
+                <div class="modal-img" id="modalImage"></div>
+                <h3 class="modal-title" id="modalTitle">原型细节</h3>
+                <p class="modal-desc" id="modalDesc">点击图片可放大查看</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>⚡ UX PLAY· GYW ⚡</p>
+        </footer>
+    </div>
+
+    <script>
+        // ================= 原有项目数据 (增强：添加图片URL) =================
+        const projectsData = {
+            p1: {
+                name: '原型—设计稿',
+                fullDescription: '主导设计了游戏内大部分玩法功能的界面及大地图交互，满足不同玩家的需求。',
+                prototypes: [
+                    { title: 'PVE玩法', desc: '远征地图+时光之门+公会BOSS', icon: 'fa-boxes', color: '#8875ff', imgUrl: './img/pro1.gif', coverImg: './img/cover1.jpg' },
+                    { title: 'PVP玩法', desc: '打城（1/2/3/4级）+勇士竞技场', icon: 'fa-weight-hanging', color: '#5d9eff', imgUrl: './img/pro2.gif', coverImg: './img/cover2.jpg' },
+                    { title: '英雄养成系统', desc: '英雄合成&升级+技能升星+装备强化', icon: 'fa-bolt', color: '#c37df2', imgUrl: './img/pro3.gif', coverImg: './img/cover3.jpg' },
+                    { title: '大地图功能', desc: '队伍设置+坐标标记+侦察玩家', icon: 'fa-chart-simple', color: '#ff8896', imgUrl: './img/pro4.gif', coverImg: './img/cover4.png' }
+                ]
+            },
+            p2: {
+                name: '勇士竞技场',
+                fullDescription: '重制对话轮盘UI。新的情感高亮和立场标记让玩家快速理解NPC倾向，配合手柄优化径向菜单。',
+                prototypes: [
+                    { title: '对话轮盘', desc: '情绪色环+快捷短语', icon: 'fa-comment-dots', color: '#3b9eff', imgUrl: './img/dtcg1.webp' },
+                    { title: '关系图谱', desc: '动态NPC关系图', icon: 'fa-share-nodes', color: '#c05aff', imgUrl: './img/dtcg2.gif' },
+                    { title: '日志界面', desc: '任务与线索整合', icon: 'fa-book-open', color: '#ffa25b', imgUrl: './img/dtcg3.gif' },
+                    { title: '对比界面', desc: '装备数据可视化', icon: 'fa-wave-square', color: '#39c0ba', imgUrl: './img/dtcg4.gif' },
+                
+                ]
+            },
+            p3: {
+                name: '交互优化',
+                fullDescription: '负责游戏内所有系统的交互/动效设计和验收，并不断调优，致力于给玩家提供更好的体验。',
+                prototypes: [
+                    { title: '拖拽/双击移动卡牌', desc: '第二版在初版”拖拽“操作的基础上新增了”双击“操作。\n双击操作既不占用查看卡牌详情的点击操作，又可以更快速地编辑卡组。\n拖拽操作虽耗时较长，但更有代入感，符合TCG老玩家的操作习惯，因此仍保留，后续不断微调以提升流畅度。', icon: 'fa-hand-pointer', color: '#b2aeff', imgUrl: './img/dtcg1.webp', coverImg: './img/dtcg-cover1.png' },
+                    { title: '抽卡动画的优化思路', desc: '设计为模拟拆实体卡包的形式，沉浸感更强。\n第一版设计为纵向滑动拆包，由于卡包的高度大于宽度，整个操作流程较长（约2s），且实际在手机屏幕上操作有顿挫感，故第二版改为横向滑动，缩短流程（约1s）,操作更顺手了。', icon: 'fa-cubes', color: '#fea789', imgUrl: './img/dtcg2.gif', coverImg: './img/dtcg-cover2.png' },
+                    { title: '“先手”决定方式优化', desc: '为了提升玩家的参与感，初版设计为”猜拳“形式，赢方先攻，动画开始后每次需手动点击停止，直到分出胜负，但发现这样太容易出现人为不确定因素，且操作较冗余，故第二版改为自动停止。\n后续体验下来感觉“猜拳”形式过于拖沓幼稚，为提升游戏质感，第三版参考竞品改为“抛硬币”形式，正面先攻。', icon: 'fa-magnifying-glass', color: '#9bb9ff', imgUrl: './img/dtcg3.gif', coverImg: './img/dtcg-cover3.png' },
+                    { title: '交互合集', desc: '', icon: 'fa-flask', color: '#7ed0b0', imgUrl: './img/dtcg4.gif', coverImg: './img/dtcg-cover4.png' },
+                ]
+            },
+            p4: {
+                name: '界面优化',
+                fullDescription: '负责游戏内所有界面的设计和优化，从可用性、易用性和视觉效果等多方面把控最终落地质量。',
+                prototypes: [
+                    { title: '养成界面', desc: '初版以早期的电子宠物为灵感，将界面设计成“实体机器”样式。\n后经内部多方反馈，认为此设计过于复古小众，可能不太符合当前大多数年轻玩家的审美，因此第二版改为多数玩家更能接受的“全息影像”样式。', icon: 'fa-eye', color: '#fc8c92', imgUrl: './img/jiemian1.png', coverImg: './img/jiemian1.png' },
+                    { title: '战斗界面', desc: '最初的主要设计目的是为了更好地迎合实体卡玩家，几乎1:1还原线下打牌场景，新版设计不再拘泥于复刻，而是更多地提升了易用性和游戏性，降低新手玩家的学习成本。\n1.原先的弃牌区设计虽与场景融合度较高，但对于没接触过TCG这类游戏的玩家来说很难理解，改成牌堆形式更易理解。\n2.新版将敌我双方桌面改为镜像，使场景布局更整洁。\n3.将关联信息（回合倒计时和回合方）显示在一起，看起来更清晰便捷。\n4. 给UI加入一些拟物化的设计（如IP相关物品），增强代入感。', icon: 'fa-burst', color: '#ff8b5e', imgUrl: './img/jiemian2.png', coverImg: './img/jiemian2.png' },
+                    { title: '界面合集', desc: '', icon: 'fa-fire', color: '#fb6b3e', imgUrl: './img/jiemian3.gif', coverImg: './img/jiemian-cover3.png' },
+                ]
+            },
+            p5: {
+                name: '首页',
+                fullDescription: '我主导设计该玩法的所有界面原型及交互，通过简单的交互操作，降低玩家学习成本，以提升新玩家留存。',
+                prototypes: [
+                    { title: '个人主页', desc: '用户信息展示', icon: 'fa-user', color: '#8875ff', imgUrl: 'https://placehold.co/600x800/8875ff/ffffff?text=个人主页' },
+                    { title: '设置界面', desc: '偏好设置', icon: 'fa-gear', color: '#5d9eff', imgUrl: 'https://placehold.co/600x800/5d9eff/ffffff?text=设置界面' },
+                    { title: '消息中心', desc: '通知列表', icon: 'fa-bell', color: '#c37df2', imgUrl: 'https://placehold.co/600x800/c37df2/ffffff?text=消息中心' },
+                    { title: '成就系统', desc: '勋章展示', icon: 'fa-trophy', color: '#ff8896', imgUrl: 'https://placehold.co/600x800/ff8896/ffffff?text=成就系统' }
+                ]
+            },
+            p6: {
+                name: '社区',
+                fullDescription: '我主导设计该玩法的所有界面原型及交互，通过简单的交互操作，降低玩家学习成本，以提升新玩家留存。',
+                prototypes: [
+                    { title: '个人主页', desc: '用户信息展示', icon: 'fa-user', color: '#8875ff', imgUrl: 'https://placehold.co/600x800/8875ff/ffffff?text=个人主页' },
+                    { title: '设置界面', desc: '偏好设置', icon: 'fa-gear', color: '#5d9eff', imgUrl: 'https://placehold.co/600x800/5d9eff/ffffff?text=设置界面' },
+                    { title: '消息中心', desc: '通知列表', icon: 'fa-bell', color: '#c37df2', imgUrl: 'https://placehold.co/600x800/c37df2/ffffff?text=消息中心' },
+                    { title: '成就系统', desc: '勋章展示', icon: 'fa-trophy', color: '#ff8896', imgUrl: 'https://placehold.co/600x800/ff8896/ffffff?text=成就系统' }
+                ]
+            },
+        };
+
+        // 项目组定义
+        const projectGroups = {
+            group1: ['p1'],
+            group2: [ 'p3','p4'],
+            group3: ['p5','p6']
+        };
+
+        // DOM 元素
+        const detailPanel = document.getElementById('detailPanel');
+        const modalOverlay = document.getElementById('modalOverlay');
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDesc = document.getElementById('modalDesc');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+
+        // 关闭模态框
+        function closeModal() {
+            modalOverlay.style.display = 'none';
+        }
+        closeModalBtn.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', function(e) {
+            if (e.target === modalOverlay) closeModal();
+        });
+
+        // 打开模态框（放大查看图片）
+        window.openModal = function(proto) {
+            // 如果有图片URL则显示图片，否则显示图标
+            if (proto.imgUrl) {
+                modalImage.style.backgroundImage = `url(${proto.imgUrl})`;
+                modalImage.style.backgroundSize = 'auto 100%';
+                modalImage.style.backgroundRepeat = 'no-repeat';
+                modalImage.style.backgroundPosition = 'center';
+                modalImage.innerHTML = ''; // 清空图标
+            } else {
+                modalImage.innerHTML = `<i class="fas ${proto.icon}" style="font-size: 5rem;"></i>`;
+                modalImage.style.background = proto.color || '#b1a6ff';
+                modalImage.style.backgroundImage = 'none';
+            }
+            modalTitle.innerText = proto.title;
+            modalDesc.innerText = proto.desc;
+            modalOverlay.style.display = 'flex';
+        };
+
+        // 打开项目组 - 修改为滑动图片布局
+        window.openProjectGroup = function(groupId, noScroll) {
+            const projectIds = projectGroups[groupId];
+            if (!projectIds || projectIds.length === 0) return;
+
+            let groupsHtml = '';
+            
+            projectIds.forEach((pid) => {
+                const data = projectsData[pid];
+                if (!data) return;
+
+                // 构建滑动图片区域
+                let slidesHtml = '';
+                data.prototypes.forEach((p) => {
+                    // 将p对象转为字符串属性，注意引号转义
+                    slidesHtml += `
+                        <div class="swiper-slide" onclick='openModal(${JSON.stringify(p).replace(/'/g, "&apos;")})'>
+                            <div class="slide-img" style="background: rgba(136,177,255,0.5);">
+                                <img src="${p.coverImg}" class="pro-img cover-img" />
+                            </div>
+                            <span>${p.title}</span>
+                        </div>
+                    `;
+                });
+
+                groupsHtml += `
+                    <div class="project-group">
+                        <div class="group-title">
+                            <i class="fas fa-folder-open"></i> ${data.name}
+                        </div>
+                        <div class="group-desc">${data.fullDescription}</div>
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                ${slidesHtml}
+                            </div>
+                        </div>
+                        
+                    </div>
+                `;
+                // groupsHtml += `
+                //     <div class="project-group">
+                //         <div class="group-title">
+                //             <i class="fas fa-folder-open"></i> ${data.name}
+                //         </div>
+                //         <div class="group-desc">${data.fullDescription}</div>
+                //         <div class="swiper-container">
+                //             <div class="swiper-wrapper">
+                //                 ${slidesHtml}
+                //             </div>
+                //         </div>
+                //         <div class="swiper-hint">
+                //             <i class="fas fa-arrow-left"></i> 左右滑动查看更多 <i class="fas fa-arrow-right"></i>
+                //         </div>
+                //     </div>
+                // `;
+            });
+
+            detailPanel.innerHTML = `
+                <div class="detail-header">
+                    <button class="close-detail" onclick="document.getElementById('detailPanel').style.display='none'">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                ${groupsHtml}
+            `;
+
+            detailPanel.style.display = 'block';
+            if (!noScroll) {
+                detailPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            
+        };
+        openProjectGroup('group1', true);
+        
+
+        // ========= 视频播放控制 =========
+        const video = document.getElementById('showcaseVideo');
+        const playButton = document.getElementById('playButton');
+        const videoContainer = document.getElementById('videoContainer');
+
+        // 点击容器切换播放/暂停
+        /*
+        videoContainer.addEventListener('click', function(e) {
+            if (video.paused) {
+                video.play();
+            } else {
+                video.pause();
+            }
+        });
+        */
+
+        // 根据播放状态显示/隐藏自定义播放按钮
+        video.addEventListener('play', function() {
+            playButton.style.display = 'none';
+        });
+
+        video.addEventListener('pause', function() {
+            playButton.style.display = 'flex';
+        });
+
+        // 初始化按钮显示（如果视频暂停则显示按钮）
+        // if (video.paused) {
+        //     playButton.style.display = 'flex';
+        // } else {
+        //     playButton.style.display = 'none';
+        // }
+
+        // 导航跳转
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('dataHref');
+                document.querySelector(`#${targetId}`).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
